@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imtiyaz Allam | Data Scientist & Developer</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #38bdf8;
+            --accent-hover: #0ea5e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Hero */
+        header {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #1e293b, #0f172a);
+            /* Subtle gradient */
+        }
+
+        .hero-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .avatar {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
+            flex-shrink: 0;
+            /* Prevents shrinking on mobile */
+        }
+
+        .hero-text {
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        .headline {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .location {
+            color: #64748b;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            margin-right: 15px;
+            text-decoration: none;
+            font-size: 1rem;
+            border: 1px solid #334155;
+            padding: 5px 12px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--bg-color);
+            background-color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* Responsive Header for Mobile */
+        @media (max-width: 768px) {
+            .hero-wrapper {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #334155;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        /* About */
+        .about-content {
+            max-width: 800px;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #334155;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            background-color: #334155;
+            object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .project-info {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        .tech-stack {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-item {
+            background-color: var(--card-bg);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            border: 1px solid #334155;
+        }
+
+        /* Timeline (Experience/Education) */
+        .timeline-item {
+            margin-bottom: 30px;
+            padding-left: 20px;
+            border-left: 2px solid #334155;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .timeline-subtitle {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid #334155;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container hero-wrapper">
+            <img src="avatar.jpg" alt="Imtiyaz Allam Profile Picture" class="avatar"
+                onerror="this.src='https://avatars.githubusercontent.com/u/95128488?v=4'">
+
+            <div class="hero-text">
+                <h1>Imtiyaz Allam</h1>
+                <p class="headline">Data Scientist | Flutter Developer | Machine Learning Enthusiast</p>
+                <p class="location">📍 Bhubaneswar, Odisha, India</p>
+
+                <div class="social-links">
+                    <a href="mailto:imtiyazallam07@outlook.com">Email</a>
+                    <a href="https://www.linkedin.com/in/imtiyaz-allam-68b106252" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/imtiyazallam07" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>
+                I am a passionate and self-experienced beginner programmer with a strong foundation in Java and Python.
+                Currently pursuing a B.Tech in CSE (IoT),
+                I am an aspiring researcher and professor specializing in Data Science and Machine Learning.
+                I am proficient in object-oriented programming and data structures, and driven by a deep love for both
+                electronics and computer science.
+            </p>
+        </div>
+        <br>
+    </section>
+
+    <section class="container">
+        <br>
+        <h2>Projects</h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <a href="PricePredictor1.png"><img src="PricePredictor1.png" alt="Smartphone Price Predictor Interface"
+                        class="project-img"
+                        onerror="this.style.display='flex';this.innerText='Image: PricePredictor1.png not found'"></a>
+                <div class="project-info">
+                    <h3 class="project-title">Smartphone Price Predictor</h3>
+                    <p>A machine learning project that predicts the price of Android smartphones based on specifications
+                        like RAM, storage, battery, and display.</p>
+                    <br>
+                    <p>The model achieves an accuracy of ~88% on the test dataset.</p>
+                    <div class="tech-stack">
+                        <span class="tag">Python</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">NumPy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <a href="SmartDesk.png"><img src="Smartdesk.png" alt="SmartDesk App Interface" class="project-img"
+                        onerror="this.style.display='flex';this.innerText='Image: Smartdesk1.png not found'">
+                </a>
+                <div class="project-info">
+                    <h3 class="project-title">SmartDesk</h3>
+                    <p>An academic utility app that simplifies ITER notices, events, holiday lists, academic calendars,
+                        and curriculum in one place.</p>
+                    <div class="tech-stack">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">Mobile Dev</span>
+                        <span class="tag">Academic Utility</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img" style="background: linear-gradient(45deg, #1e293b, #334155);">
+                    <span>Asteroid Snippet (Logo Placeholder)</span>
+                </div>
+                <div class="project-info">
+                    <h3 class="project-title">Asteroid Snippet (Deprecated)</h3>
+                    <p>A Java Snippet Extension for Visual Studio Code containing 100+ snippets to boost development
+                        productivity.</p>
+                    <div class="tech-stack">
+                        <span class="tag">Java</span>
+                        <span class="tag">VS Code Extension</span>
+                        <span class="tag">Developer Tools</span>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+    </section>
+
+    <section class="container">
+        <br>
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <span class="skill-item">Data Science</span>
+            <span class="skill-item">Machine Learning</span>
+            <span class="skill-item">Flutter</span>
+            <span class="skill-item">Scientific Computation using Python</span>
+            <span class="skill-item">Java</span>
+            <span class="skill-item">Data Analysis</span>
+        </div>
+        <br>
+    </section>
+
+    <section class="container">
+        <br>
+        <h2>Experience & Education</h2>
+
+        <div class="timeline-item">
+            <h3 class="timeline-title">Tech Team Member</h3>
+            <div class="timeline-subtitle">Coding Ninjas 10X ITER</div>
+            <div class="timeline-date">March 2025 - Present | Bhubaneswar, Odisha</div>
+        </div>
+
+        <div class="timeline-item">
+            <h3 class="timeline-title">Bachelor of Technology - CSE (IoT)</h3>
+            <div class="timeline-subtitle">Siksha 'O' Anusandhan University</div>
+            <div class="timeline-date">September 2024 - Present | Bhubaneswar, Odisha</div>
+        </div>
+
+        <div class="timeline-item">
+            <h3 class="timeline-title">Senior Secondary (Science)</h3>
+            <div class="timeline-subtitle">St. Xavier's High School, Dhenkanal</div>
+            <div class="timeline-date">June 2022 - April 2024 | Dhenkanal, Odisha</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Imtiyaz Allam. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
